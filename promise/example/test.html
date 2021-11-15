@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../MyPromise.js"></script>
+  </head>
+  <body>
+    <script>
+      //测试用例1  then基本使用
+      // const p = new MyPromise((resolve, reject) => {
+      //   resolve('成功');
+      // });
+      // p.then((value) => {
+      //   console.log('成功回调');
+      //   console.log(value);
+      // });
+
+      //测试用例2  演示回调
+      // const p = new MyPromise((resolve, reject) => {
+      //   setTimeout(() => {
+      //     resolve('成功');
+      //   }, 1000);
+      // });
+      // p.then((value) => {
+      //   console.log(value);
+      // });
+
+      //多个then
+      // const p = new MyPromise((resolve, reject) => {
+      //   setTimeout(() => {
+      //     resolve(1);
+      //   }, 1000);
+      // });
+      // p.then((value) => {
+      //   console.log(2);
+      // });
+      // p.then(() => {
+      //   console.log(3);
+      // });
+
+      //链式调用promise
+
+      // const p = new MyPromise((resolve, reject) => {
+      //   setTimeout(() => {
+      //     resolve(1);
+      //   });
+      // });
+
+      // const p1 = new Promise((resolve) => {
+      //   resolve(11);
+      // });
+      // p.then((value) => {
+      //   console.log('上一步的值', value);
+      //   return p1;
+      // })
+      //   .then((value) => {
+      //     console.log('上一步的值', value);
+      //     return new Promise((resolve) => {
+      //       resolve(3);
+      //     });
+      //   })
+      //   .then((value) => {
+      //     console.log('上一步的值', value);
+      //     console.log(4);
+      //   });
+
+      //all
+
+      const p1 = new MyPromise((resolve) => {
+        setTimeout(() => {
+          console.log('1');
+          resolve(100);
+        }, 1000);
+      });
+
+      const p2 = new MyPromise((resolve) => {
+        setTimeout(() => {
+          console.log('2');
+          resolve(200);
+        }, 2000);
+      });
+
+      MyPromise.all([p1, p2]).then((result) => {
+        console.log(result);
+      });
+    </script>
+  </body>
+</html>
