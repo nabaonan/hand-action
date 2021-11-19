@@ -1,0 +1,29 @@
+div {
+  height: 100px;
+}
+
+.wrapper{
+  padding: 0 100px;
+  &>*{
+    float: left;
+  }
+
+  .center {
+    width: 100%;
+    background-color: aqua;
+  }
+
+  .left {
+    width: 100px;
+
+    margin-left: -100%; /* 相对于上一个浮动元素左移上一个元素的100%宽度的距离，移动到上一个元素的边缘*/
+    position: relative; /*由于只能到上一个元素的左边缘，由于wrapper有个padding-left，所以还要往左移动自身宽度那么多的像素，*/
+    // left: -100px;
+    background-color: pink;
+  }
+  .right {
+    width: 100px;
+    margin-right: -100px;/*由于wrapper有padding-right所以为了抵消这个padding，要用margin-right负值，使得元素恰好可以置于padding的位置*/
+    background-color: blue;
+  }
+}

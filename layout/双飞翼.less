@@ -1,0 +1,24 @@
+.float{
+  float: left;
+}
+
+.center{
+  width: 100%;//撑开
+  
+  .content{
+  background-color: bisque;
+    margin: 0 100px;//预留 左右空间
+  }
+}
+.left{
+  background-color: aquamarine;
+  width: 100px;
+  margin-left: -100%;//移动上一个浮动元素的宽度的100%距离，恰好位于margin-left的区域
+}
+
+.right{
+  background-color: blueviolet;
+  width: 100px;
+  margin-left: -100px;//左移自身的宽度，使得自身恰好位于margin-right区域
+  
+}
