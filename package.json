@@ -1,0 +1,27 @@
+{
+  "name": "hand-action",
+  "version": "1.0.0",
+  "description": "do it by myself",
+  "main": "arrayLike.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nabaonan/hand-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nabaonan/hand-action/issues"
+  },
+  "homepage": "https://github.com/nabaonan/hand-action#readme",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "babel-jest": "^27.3.1",
+    "jest": "^27.3.1"
+  }
+}

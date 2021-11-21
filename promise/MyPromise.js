@@ -22,21 +22,22 @@ class MyPromise {
     excute(this.resolve, this.reject)
   }
 
-  //不是很理解这个??????????
+  //箭头函数指向类创建出的对象，不取决于调用时候的对象
   resolvePromise = (thenablePromise, resolve, reject) => {
-    // 判断是否是一个promise对象
-    if (thenablePromise instanceof MyPromise) {
-      thenablePromise.then(resolve, reject);
-    } else {
-      // 如果不是promise对象，则直接返回值
-      resolve(thenablePromise);
-    }
+    setTimeout(() => {//异步执行，
+
+      // 判断是否是一个promise对象
+      if (thenablePromise instanceof MyPromise) {
+        thenablePromise.then(resolve, reject);
+      } else {
+        // 如果不是promise对象，则直接返回值
+        resolve(thenablePromise);
+      }
+    }, 0)
 
   }
 
   then(onResolve, onReject) {
-    // console.log(this.status)
-
 
 
     return new MyPromise((resolve, reject) => {
@@ -65,7 +66,6 @@ class MyPromise {
 
   }
 
-  //使用箭头函数绑定实例对象上，待研究????
   resolve = (value) => {
 
     if (this.status == MyPromise.PENDING) {
@@ -113,15 +113,21 @@ class MyPromise {
 
       const result = []
       let count = 0
-      arr.forEach((p, index) => {
-        MyPromise.resolve(p).then(r => {
-          count++;
-          result[index] = r
-          if (count === total) {
-            resolve(result)
-          }
+
+      try {
+        arr.forEach((p, index) => {
+          MyPromise.resolve(p).then(r => {
+            count++;
+            result[index] = r
+            if (count === total) {
+              resolve(result)
+            }
+          })
         })
-      })
+
+      } catch (error) {
+        reject(error)
+      }
 
 
     })
@@ -130,3 +136,6 @@ class MyPromise {
 }
 
 //问题：     class定义的方法使用箭头函数和不使用箭头函数this指向
+
+
+export default MyPromise
