@@ -1,5 +1,5 @@
 
-import { describe, expect, test } from '@jest/globals'
+import { describe, expect, test, it } from '@jest/globals'
 
 import MyPromise from '../MyPromise'
 
@@ -93,3 +93,48 @@ test('all', () => {
 
 })
 
+
+
+it('测试race', () => {
+
+
+  const arr = [new MyPromise((resolve) => {
+    setTimeout(() => {
+      resolve(2)
+    }, 100)
+  }),  () => {
+    return new MyPromise(resolve => {
+      setTimeout(() => {
+       resolve(4) 
+      },80)
+    })
+    }, () => {
+    return 1
+    }]
+
+  MyPromise.race(arr).then(r => {
+    expect(r).toEqual(1)
+  })
+
+})
+
+it('测试原生race', () => {
+  
+
+  const arr = [new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(2)
+    }, 100)
+  }),  () => {
+    return new Promise(resolve => {
+      setTimeout(() => {
+       resolve(4) 
+      },80)
+    })
+  }]
+
+  Promise.race(arr).then(r => {
+    expect(r).toEqual(4)
+  })
+
+})

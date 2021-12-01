@@ -104,6 +104,24 @@ class MyPromise {
     }
   }
 
+  static race = (arr) => {
+    return new MyPromise((resolve, reject) => {
+      arr.forEach(p => {
+
+        if (p instanceof MyPromise) {
+          p.then((r) => {
+            resolve(r)
+          })
+        } else {
+          MyPromise.resolve(p()).then(resolve)
+          // const r = p()
+          // resolve(r)
+        }
+       
+      })
+    })
+  }
+
 
   static all = (arr) => {
 
