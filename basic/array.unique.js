@@ -50,3 +50,28 @@ export function unique3(arr1, arr2) {
   
 }
 
+/**
+ * 使用自定义迭代器 接口  通过扩展运算符调用迭代器接口
+ * @param {*} arr 
+ * @returns 
+ */
+export function unique4(arr) {
+
+  const obj = {
+    [Symbol.iterator]: function* () {
+      const keys = Reflect.ownKeys(this)
+      for (let key of keys) {
+        yield this[key]//key不能转换数字，只能是字符串，所以这里使用值
+      }
+    }
+  }
+
+  arr.forEach(val => {
+    obj[val] = val//复用对象自动去重的特性
+  })
+ 
+  const result = [...obj]
+  result.pop()//去掉迭代器函数  默认会连迭代器接口也迭代出来，返回结果之前去掉
+
+  return result
+ }
