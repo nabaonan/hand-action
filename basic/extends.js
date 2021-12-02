@@ -3,7 +3,7 @@
  */
 
 
-function Father(name) {
+export function Father(name) {
   this.name = name
   this.say = function () {
     // console.log('')

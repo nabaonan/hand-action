@@ -1,5 +1,5 @@
 
-import { expect, test } from '@jest/globals'
+import { expect, test,it } from '@jest/globals'
 import { myInstanceof } from '../instanceof'
 class Father {
   constructor(name) {
@@ -31,4 +31,13 @@ test('原生 instanceof', () => {
   const s = new Son('小明')
   expect(s instanceof Father).toBe(true)
   expect(s instanceof Son).toBe(true)
+})
+
+
+
+it('测试原型', () => {
+  
+
+  expect(myInstanceof(Object,Function)).toEqual(true)
+  expect(myInstanceof(Object.prototype,Object)).toEqual(true)
 })
