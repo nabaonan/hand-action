@@ -5,7 +5,7 @@ export function myNew(target, ...args) {
   // const b = target.prototype
   Object.setPrototypeOf(obj, target.prototype)//将空对象的原型设置为目标原型
   //这里不能用Object.getPrototypeOf,因为getPrototypeOf入参是个对象，相当于获取的是Function.prototype 而不是target函数自身的prototype
-  // target.prototype.__proto__才等于Function.prototype
+ 
   console.log(args)
   const result = target.apply(obj, args)//如果有返回结果则直接用返回的结果
   return result instanceof Object ? result : obj

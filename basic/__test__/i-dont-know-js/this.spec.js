@@ -7,8 +7,8 @@ it("this全局指向问题", () => {
   "use strict";
   var a = 10;
   function foo() {
-   //开启了严格模式，只是说使得函数内的this指向undefined，它并不会改变全局中this的指向。因此this1中打印的是undefined，而this2还是window对象。
-    
+    //开启了严格模式，只是说使得函数内的this指向undefined，它并不会改变全局中this的指向。因此this1中打印的是undefined，而this2还是window对象。
+
     //另外，它也不会阻止a被绑定到window对象上。
 
 
@@ -19,8 +19,22 @@ it("this全局指向问题", () => {
     console.log(this.a)//Uncaught TypeError: Cannot read property 'a' of undefined
   }
   console.log(window.foo)//f foo() {...}
-  
+
   console.log('this2', this)//'this2' Window{...}
   foo();
+
+})
+
+
+it('this', () => {
+  let a = 10
+  const b = 20
+
+  function foo() {
+    console.log(this.a)
+    console.log(this.b)
+  }
+  foo();
+  console.log(window.a)
 
 })
