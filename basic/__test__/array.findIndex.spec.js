@@ -1,6 +1,6 @@
 import { expect, it } from '@jest/globals';
 
-import '../array.findIndex'
+import '../array/array.findIndex'
 
 /**
  * 测试用例： https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex

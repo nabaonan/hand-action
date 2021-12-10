@@ -1,6 +1,6 @@
 import { expect, it } from '@jest/globals';
 
-import '../array.slice'
+import '../array/array.slice'
 
 it('返回现有数组的一部分', () => {
 

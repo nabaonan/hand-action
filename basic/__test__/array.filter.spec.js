@@ -2,7 +2,7 @@
 
 import { expect, it, test } from '@jest/globals'
 import { filter } from 'lodash';
-import '../array.filter'
+import '../array/array.filter'
 
 
 

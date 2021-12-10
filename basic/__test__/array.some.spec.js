@@ -1,7 +1,7 @@
 
 import { expect, it, test } from '@jest/globals'
 
-import '../array.some'
+import '../array/array.some'
 
 it('自定义some', () => {
 

@@ -1,6 +1,6 @@
 
 import { expect, it, test } from '@jest/globals'
-import '../array.map'
+import '../array/array.map'
 
 
 

@@ -1,6 +1,6 @@
 
 import { it,expect } from '@jest/globals'
-import { unique,unique2,unique3,unique4 } from '../array.unique'
+import { unique,unique2,unique3,unique4 } from '../array/array.unique'
 
 
 

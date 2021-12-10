@@ -1,5 +1,5 @@
 import { expect, it } from '@jest/globals';
-import { diff } from '../array.diff';
+import { diff } from '../array/array.diff';
 
 it('筛选数组差异项', () => {
 

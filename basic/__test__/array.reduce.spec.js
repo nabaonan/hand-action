@@ -1,6 +1,6 @@
 
 import { expect, it, test } from '@jest/globals'
-import '../array.reduce'
+import '../array/array.reduce'
 
 /**
  * 测试用例 部分来自 mdn 

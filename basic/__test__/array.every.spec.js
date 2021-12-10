@@ -1,7 +1,7 @@
 
 import { expect, it, test } from '@jest/globals'
 
-import '../array.every'
+import '../array/array.every'
 it('自定义every', () => {
 
   function isBigEnough(element, index, array) {

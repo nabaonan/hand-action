@@ -1,5 +1,5 @@
 import { expect, it } from '@jest/globals';
-import '../array.flat'
+import '../array/array.flat'
 it('扁平化', () => {
 
 

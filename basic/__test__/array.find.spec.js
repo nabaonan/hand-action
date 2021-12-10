@@ -1,7 +1,7 @@
 
 
 import { expect, it } from '@jest/globals'
-import '../array.find'
+import '../array/array.find'
 
 it('用对象的属性查找数组里的对象', () => {
 
