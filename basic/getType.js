@@ -1,3 +1,9 @@
+/**
+ * 一个通用的获取类型的方法
+ * @param {*} obj 
+ * @returns 
+ */
+
 export function getType(obj) {
   
   const result = Object.prototype.toString.call(obj)

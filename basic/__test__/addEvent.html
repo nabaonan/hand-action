@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div{
+        height: 30px;
+        background-color: black;
+      }
+
+      span{
+        display: block;
+        height: 100%;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="p">
+      <span id="s1">1</span>
+      <span id="s2">2</span>
+      <span>3</span>
+      <span>4</span>
+      <span>5</span>
+    </div>
+
+
+    <script src="../addEvent.js"></script>
+    <script>
+      const fn = (e) => {
+        content = e.target.innerHTML;
+        alert(content);
+      };
+      myAddEventListener('#id', 'click', fn);
+    </script>
+  </body>
+</html>
