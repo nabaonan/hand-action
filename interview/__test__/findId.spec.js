@@ -1,7 +1,7 @@
 
 import { it, expect, test } from '@jest/globals'
 
-import { findId } from '../findId'
+import { findId } from '../byte1/findId'
 
 it('测试', () => { 
 
