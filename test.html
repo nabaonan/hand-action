@@ -1,68 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="test" onclick="test">
+      father
+      <div id="child1">child</div>
 
-//     function test(e) {
-//       console.log(e.target)
-//     }
-
-//     const value = { number:10 };
-
-// const multiply = (x = { ...value }) => {
-//   console.log((x.number *= 2));
-// };
-
-// multiply();
-// multiply();
-// multiply(value);
-// multiply(value);
-
-class Dog {
-  constructor(name) {
-    this.name = name;
-  }
-};
-
-class Labrador extends Dog {
-  // 1
-  // constructor(name, size) {
-  //   this.size = size;
-  // }
-  // // 2
-  // constructor(name, size) {
-  //   super(name);
-  //   this.size = size;
-  // }
-  // 3
-  constructor(size) {
-    super(name);
-    this.size = size;
-  }
-  // 4
-  // constructor(name, size) {
-  //   this.name = name;
-  //   this.size = size;
-  // }
-
-};
-
-new Labrador(123,'435')
-
-
-  </script>
-  <div onclick="console.log('first div')">
-    <div onclick="console.log('second div')">
-      <button onclick="test">
-        Click!
-      </button>
+      <div id="child2">child2</div>
     </div>
-  </div>
-</body>
+    <script>
+      function isChild(father, child) {
+        if (father.contains(child)) {
+          console.log(true);
+        } else {
+          console.log(false);
+        }
+      }
+
+   
+      console.log(document.body.querySelector('div'))
+      // console.log($('#child1'), $('#child2'))
+
+      isChild(document.body.querySelector('#test'), document.body.querySelector('#child2'));
+
+
+      var length = 10;
+function fn() {
+  console.log(this,this.length++)
+ return this.length;
+}
+var obj1 = {
+ length: 5,
+   test1: function() {
+     return fn()
+ }
+}
+obj1.test2 = fn;
+obj1.test1.call()
+obj1.test1()
+obj1.test2.call()
+obj1.test2()
+console.log(obj1)
+console.log(window.length)
+    </script>
+  </body>
 </html>
