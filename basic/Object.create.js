@@ -6,7 +6,7 @@ export function create(targetPrototype) {
     throw new Error('原型不能为空')
   }
 
-  const temp = function () { }
+  function temp() { }
   temp.prototype = targetPrototype
   return new temp()
 
