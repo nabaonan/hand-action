@@ -1,6 +1,13 @@
+/**
+ * 事件代理
+ * @param {*} parent 
+ * @param {*} eventType 
+ * @param {*} fn 
+ * @param {*} selector 
+ */
+  
+
 function myAddEventListener(parent, eventType, fn, selector) {
-
-
 
   if (typeof parent === 'string') {
     parent = document.querySelector(parent)
